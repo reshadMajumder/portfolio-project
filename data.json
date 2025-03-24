@@ -1,0 +1,46 @@
+{
+  "works": [
+    {
+      "id": 1,
+      "title": "Midway",
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
+      "description": "A small river named Duden flows by their place and supplies."
+    },
+    {
+      "id": 2,
+      "title": "Workplace Office",
+      "category": "Web Design",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+      "description": "A small river named Duden flows by their place and supplies."
+    },
+    {
+      "id": 3,
+      "title": "Jacket Leather",
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5",
+      "description": "A small river named Duden flows by their place and supplies."
+    },
+    {
+      "id": 4,
+      "title": "Topless",
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+      "description": "A small river named Duden flows by their place and supplies."
+    },
+    {
+      "id": 5,
+      "title": "Fashion Style",
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa",
+      "description": "A small river named Duden flows by their place and supplies."
+    },
+    {
+      "id": 6,
+      "title": "Prickly",
+      "category": "Product",
+      "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa",
+      "description": "A small river named Duden flows by their place and supplies."
+    }
+  ]
+} 
