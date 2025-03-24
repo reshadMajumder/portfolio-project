@@ -21,16 +21,73 @@ header {
     background: #000;
 }
 
+/* Standardize header heights for all pages */
+.about-header,
+.work-header,
+.contact-header {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background: #000;
+}
+
+.about-hero,
+.work-hero,
+.contact-hero {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero h1,
+.work-hero h1,
+.contact-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.triangle-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: -1;
+}
+
+.breadcrumb {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.breadcrumb a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #ffed4a;
+}
+
 nav {
     position: absolute;
     width: 100%;
-    padding: 2rem 4rem;
+    padding: 2rem var(--container-padding);
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    background: transparent;
 }
 
 .banner {
@@ -72,15 +129,17 @@ nav {
     justify-content: center;
     z-index: 2;
     gap: 1rem;
+    text-align: center;
 }
 
 .text-outline {
-    font-size: 25vw;
+    font-size: clamp(3rem, 25vw, 15rem);
     font-weight: 900;
     color: transparent;
     -webkit-text-stroke: 2px white;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .logo {
@@ -133,7 +192,7 @@ nav ul li a.active::after {
 
 /* Intro section */
 .intro {
-    padding: 8rem 4rem;
+    padding: 8rem var(--container-padding);
     background: #fff;
     max-width: 1400px;
     margin: 0 auto;
@@ -177,7 +236,7 @@ nav ul li a.active::after {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -476,17 +535,6 @@ footer {
     overflow: hidden;
 }
 
-.triangle-pattern {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 25%, #222 25%, #222 50%, transparent 50%);
-    background-size: 20px 20px;
-    opacity: 0.3;
-}
-
 .about-hero {
     height: 100%;
     display: flex;
@@ -681,17 +729,6 @@ footer {
     position: relative;
     overflow: hidden;
     margin-bottom: 4rem;
-}
-
-.triangle-pattern {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 25%, #222 25%, #222 50%, transparent 50%);
-    background-size: 40px 40px;
-    opacity: 0.4;
 }
 
 .contact-hero {
@@ -933,7 +970,7 @@ footer {
 
 /* Update tech stack section styles */
 .tech-stack {
-    padding: 8rem 4rem;
+    padding: 8rem var(--container-padding);
     background: #f9f9f9;
 }
 
@@ -947,8 +984,8 @@ footer {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -1002,5 +1039,493 @@ footer {
     .tech-item img {
         width: 50px;
         height: 50px;
+    }
+}
+
+/* About page improvements */
+.about-hero {
+    text-align: center;
+}
+
+.about-hero .subtitle {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+}
+
+.section-tag {
+    color: #ffd700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.about-grid {
+    gap: 6rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: #ffd700;
+    padding: 1.5rem;
+    border-radius: 50%;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.experience-badge .years {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.experience-badge .text {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.key-points {
+    margin-top: 2rem;
+}
+
+.point {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.point i {
+    color: #ffd700;
+    margin-right: 1rem;
+}
+
+/* Skills section */
+.skills-section {
+    padding: 6rem var(--container-padding);
+    background: #f9f9f9;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #ffd700;
+    border-radius: 4px;
+    transition: width 1.5s ease;
+}
+
+/* Experience Timeline */
+.experience-section {
+    padding: 6rem var(--container-padding);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #eee;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: calc(50% - 2rem);
+    margin-left: auto;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.5rem;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: auto;
+    right: -2.5rem;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content .company {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content .period {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.achievements {
+    list-style: none;
+}
+
+.achievements li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievements li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+@media (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        width: calc(100% - 3rem);
+        margin-left: 3rem;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 3rem;
+        margin-right: 0;
+    }
+
+    .timeline-dot {
+        left: -3.5rem;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -3.5rem;
+        right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        gap: 3rem;
+    }
+
+    .experience-badge {
+        width: 100px;
+        height: 100px;
+        bottom: -20px;
+        right: -20px;
+    }
+
+    .skills-section,
+    .experience-section {
+        padding: 4rem 2rem;
+    }
+}
+
+/* Company roles section */
+.company-roles {
+    margin-top: 3rem;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+.role {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #ffd700;
+}
+
+.role h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.role .position {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.role .description {
+    color: #777;
+    line-height: 1.6;
+}
+
+.about-description a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-description a:hover {
+    color: #ffed4a;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .company-roles {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .role {
+        padding: 1rem;
+    }
+
+    .role h4 {
+        font-size: 1.2rem;
+    }
+
+    .role .position {
+        font-size: 1rem;
+    }
+}
+
+/* Add/update responsive breakpoints */
+:root {
+    --container-max-width: 1400px;
+    --container-padding: 4rem;
+    --mobile-padding: 2rem;
+}
+
+/* Responsive container class */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Update header/banner responsive styles */
+.banner-text {
+    text-align: center;
+}
+
+/* Update navigation responsive styles */
+nav {
+    padding: 2rem var(--container-padding);
+}
+
+/* Add hamburger menu for mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Update section padding */
+.intro,
+.services,
+.tech-stack,
+.skills-section,
+.experience-section {
+    padding: 8rem var(--container-padding);
+}
+
+/* Update grid layouts */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    :root {
+        --container-padding: 4rem;
+    }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    :root {
+        --container-padding: 3rem;
+    }
+    
+    .intro-content h1 {
+        font-size: 3rem;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet screens (768px to 991px) */
+@media (max-width: 991px) {
+    :root {
+        --container-padding: 2rem;
+    }
+
+    .intro-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Mobile screens (up to 767px) */
+@media (max-width: 767px) {
+    :root {
+        --container-padding: 1.5rem;
+    }
+
+    /* Show hamburger menu */
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 1.5rem 0;
+    }
+
+    .intro-content h1 {
+        font-size: 2rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Small mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 1rem;
+    }
+
+    .intro-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1,
+    .work-hero h1,
+    .contact-hero h1 {
+        font-size: 2.5rem;
     }
 }

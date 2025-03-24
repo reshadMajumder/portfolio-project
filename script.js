@@ -129,4 +129,21 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+});
+
+// Add mobile menu functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 }); 
