@@ -114,32 +114,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.portfolio-counter')) {
         animateCounter();
     }
-
-    // Animate loader skills
-    const skills = document.querySelectorAll('.loader-skill');
-    skills.forEach((skill, index) => {
-        skill.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1 + 0.5}s`;
-    });
-
-    // Enhanced loader animation
-    const loader = document.querySelector('.loader-container');
-    const content = document.querySelector('.loader-content');
-
-    // Add mouse movement effect
-    document.addEventListener('mousemove', (e) => {
-        if (!loader.classList.contains('hide-loader')) {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            content.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        }
-    });
-
-    // Hide loader with enhanced animation
-    setTimeout(() => {
-        loader.classList.add('hide-loader');
-        
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 1000);
-    }, 3000);
 }); 
