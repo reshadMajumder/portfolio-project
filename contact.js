@@ -13,7 +13,7 @@ const contactInfo = [
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
             </svg>`,
         title: "Contact Number",
-        details: ["+ 1235 2355 98"]
+        details: ["+880 1627076527"]
     },
     {
         icon: `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
@@ -21,16 +21,12 @@ const contactInfo = [
                 <path d="M22 6l-10 7L2 6"/>
             </svg>`,
         title: "Email Address",
-        details: ["info@yoursite.com"]
+        details: ["contact@jahidulhassanreshad.co"]
     },
     {
-        icon: `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20"/>
-                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>`,
-        title: "Website",
-        details: ["yoursite.com"]
+        icon: `<i class="fab fa-github "></i>`,
+        title: "GitHub",
+        details: ["https://github.com/reshadMajumder"]
     }
 ];
 
