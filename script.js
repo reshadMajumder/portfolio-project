@@ -1,11 +1,13 @@
-// Add smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
+// Add smooth scrolling only for hash links (internal page links)
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const section = document.querySelector(this.getAttribute('href'));
-        section.scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -114,4 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.portfolio-counter')) {
         animateCounter();
     }
+});
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Get current page path
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Find and highlight current page in navigation
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
 }); 

@@ -30,11 +30,23 @@ async function loadPortfolio() {
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.2,
+            rootMargin: '50px'
         });
 
         document.querySelectorAll('.portfolio-item').forEach(item => {
             observer.observe(item);
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('img').style.transform = 'scale(1)';
+            });
         });
 
     } catch (error) {

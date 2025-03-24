@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Work - Reshad</title>
+    <title>Work - Jahidul Hassan Reshad</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="work-header">
@@ -14,42 +15,94 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="work.html">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="work-hero">
             <div class="triangle-pattern"></div>
-            <h1>Beautiful Work</h1>
+            <h1>My Projects</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> > <span>Work</span>
+            </div>
         </div>
     </header>
 
     <section class="work-grid">
-        <div id="portfolio-items" class="portfolio-container">
-            <!-- Portfolio items will be loaded here via JavaScript -->
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Project 1">
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-category">Web Development</div>
+                    <h3 class="portfolio-item-title">E-commerce Platform</h3>
+                    <p class="portfolio-item-description">A full-stack e-commerce solution with modern UI and secure payment integration.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Project 2">
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-category">Mobile App</div>
+                    <h3 class="portfolio-item-title">Task Management App</h3>
+                    <p class="portfolio-item-description">A React Native app for managing daily tasks and team collaboration.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 3">
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-category">Backend Development</div>
+                    <h3 class="portfolio-item-title">API Development</h3>
+                    <p class="portfolio-item-description">RESTful API development with Django and PostgreSQL.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040" alt="Project 4">
+                <div class="portfolio-item-content">
+                    <div class="portfolio-item-category">DevOps</div>
+                    <h3 class="portfolio-item-title">CI/CD Pipeline</h3>
+                    <p class="portfolio-item-description">Automated deployment pipeline using GitHub Actions and AWS.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>ABOUT US</h4>
-                <p>Creative portfolio showcasing web design and development work.</p>
+                <h4>Jahidul Hassan Reshad</h4>
+                <p>Full Stack Software Engineer passionate about creating innovative web solutions and solving complex problems.</p>
             </div>
             <div class="footer-section">
-                <h4>CONTACT</h4>
-                <p>email@example.com</p>
-                <p>+1 234 567 890</p>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
             <div class="footer-section">
-                <h4>SOCIAL</h4>
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> jahidulhassan.reshad@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +880 1234-567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
                 <div class="social-links">
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jahidul Hassan Reshad. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="work.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
